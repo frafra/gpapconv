@@ -15,6 +15,13 @@
 $ uwsgi --ini uwsgi.ini
 ```
 
+### Docker image
+
+```
+$ docker build --tag=gpapconv .
+$ docker run --publish 8000:8000 --detach gpapconv
+```
+
 ## How to use
 
 ### Web interface

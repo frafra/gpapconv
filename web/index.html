@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>gpapconv</title>
+<meta charset="utf-8">
+</head>
+</head>
+<body>
+<h1>gpapconv</h1>
+<strong>Geopaparazzi to OSM XML and GeoJSON converter</strong>
+<p>Data conversion from the <i>notes</i> table</p>
+<h2>gpap2osm</h2>
+<form action="gpap2osm" method="post" enctype="multipart/form-data">
+ <div>
+   <label for="file">Select the GeoPaparazzi (.gpap) database</label><br>
+   <input type="file" id="file" name="file" multiple>
+ </div>
+ <div>
+   <button>Convert to OSM XML</button>
+ </div>
+</form>
+<h2>gpap2geojson</h2>
+<form action="gpap2geojson" method="post" enctype="multipart/form-data">
+ <div>
+   <label for="file">Select the GeoPaparazzi (.gpap) database</label><br>
+   <input type="file" id="file" name="file" multiple>
+ </div>
+ <div>
+   <button>Convert to GeoJSON</button>
+ </div>
+</form>
+<hr>
+<p>Made by <a href="https://frafra.eu">Francesco Frassinelli</a> (Frafra)</p>
+</body>
+</html>

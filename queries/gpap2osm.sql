@@ -13,14 +13,25 @@
               'lat="' || lat || '" ' ||
               'lon="' || lon || '">' || 
               group_concat('<tag ' ||
-                'k="' || replace(json_extract(value, '$.key'),   '"', '&quot;') || '" ' ||
-                'v="' || replace(json_extract(value, '$.value'), '"', '&quot;') || '"/>', ''
+                'k="' || key || '" ' ||
+                'v="' || (
+                    case when val == 'true'  then 'yes'
+                         when val == 'false' then 'no'
+                         else val
+                          end
+                ) || '"/>', ''
               ) ||
               '</node>' as nodes
+         from parsed
+        group by _id
+       ),
+       parsed as (
+       select _id, lat, lon,
+              replace(json_extract(value, '$.key'),   '"', '&quot;') as key,
+              replace(json_extract(value, '$.value'), '"', '&quot;') as val
          from notes,
               json_each(json_extract(notes.form, '$.forms[0].formitems'))
         where json_extract(value, '$.value') != ''
-        group by _id
        )
 select '<?xml version="1.0" encoding="UTF-8"?>' ||
        '<osm version="0.6" generator="gpap-notes2osm 0.0.3">' ||

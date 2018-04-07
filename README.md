@@ -1,5 +1,9 @@
 # gpapconv
 
+Geopaparazzi to OSM XML and GeoJSON converter
+
+Demo: https://gpapconv.frafra.eu/
+
 ## Dependencies
 
 - [Python 3](https://www.python.org/)

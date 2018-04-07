@@ -3,7 +3,7 @@
     This query allows to convert notes from Geopaparazzi into a OSM XML
     file that can be imported into JOSM.
   Usage:
-    $ sqlite3 geopaparazzi.gpap < gpap-notes2osm.sql > geopaparazzi.osm
+    $ sqlite3 geopaparazzi.gpap < gpap2osm.sql > geopaparazzi.osm
   Made by:
     Francesco Frassinelli - https://frafra.eu
 */

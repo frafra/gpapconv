@@ -1,9 +1,8 @@
 /*
   Description:
-    This query allows to convert notes from Geopaparazzi into a GeoJSON
-    file that can be imported into JOSM.
+    This query allows to convert notes from Geopaparazzi into a GeoJSON.
   Usage:
-    $ sqlite3 geopaparazzi.gpap < gpap-notes2geojson.sql > geopaparazzi.geojson
+    $ sqlite3 geopaparazzi.gpap < gpap2geojson.sql > geopaparazzi.geojson
   Made by:
     Francesco Frassinelli - https://frafra.eu
 */

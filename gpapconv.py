@@ -33,5 +33,4 @@ def gpap2osm(body):
 
 @hug.post('/gpap2geojson', output=output_format.geojson)
 def gpap2osm(body):
-    filename = list(body.keys()).pop()
     return run_query_on_form(body, 'file', 'queries/gpap2geojson.sql')

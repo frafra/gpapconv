@@ -5,7 +5,6 @@ import hug
 import output_format
 
 import functools
-import glob
 import sqlite3
 import tempfile
 

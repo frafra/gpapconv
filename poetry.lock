@@ -1,0 +1,131 @@
+[[package]]
+category = "main"
+description = "Python package for providing Mozilla's CA Bundle."
+name = "certifi"
+optional = false
+python-versions = "*"
+version = "2019.11.28"
+
+[[package]]
+category = "main"
+description = "Universal encoding detector for Python 2 and 3"
+name = "chardet"
+optional = false
+python-versions = "*"
+version = "3.0.4"
+
+[[package]]
+category = "main"
+description = "An unladen web framework for building APIs and app backends."
+name = "falcon"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "2.0.0"
+
+[[package]]
+category = "main"
+description = "A Python framework that makes developing APIs as simple as possible, but no simpler."
+name = "hug"
+optional = false
+python-versions = ">=3.5"
+version = "2.6.1"
+
+[package.dependencies]
+falcon = "2.0.0"
+requests = "*"
+
+[[package]]
+category = "main"
+description = "Internationalized Domain Names in Applications (IDNA)"
+name = "idna"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "2.9"
+
+[[package]]
+category = "main"
+description = "Python HTTP for Humans."
+name = "requests"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+version = "2.23.0"
+
+[package.dependencies]
+certifi = ">=2017.4.17"
+chardet = ">=3.0.2,<4"
+idna = ">=2.5,<3"
+urllib3 = ">=1.21.1,<1.25.0 || >1.25.0,<1.25.1 || >1.25.1,<1.26"
+
+[package.extras]
+security = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)"]
+socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7)", "win-inet-pton"]
+
+[[package]]
+category = "main"
+description = "HTTP library with thread-safe connection pooling, file post, and more."
+name = "urllib3"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4"
+version = "1.25.8"
+
+[package.extras]
+brotli = ["brotlipy (>=0.6.0)"]
+secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "certifi", "ipaddress"]
+socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7,<2.0)"]
+
+[[package]]
+category = "main"
+description = "The uWSGI server"
+name = "uwsgi"
+optional = false
+python-versions = "*"
+version = "2.0.18"
+
+[metadata]
+content-hash = "e85226c3f02a850a5a830a2c1a003101f8a613aa27b865bfd6bc605393ebad19"
+python-versions = "^3.7"
+
+[metadata.files]
+certifi = [
+    {file = "certifi-2019.11.28-py2.py3-none-any.whl", hash = "sha256:017c25db2a153ce562900032d5bc68e9f191e44e9a0f762f373977de9df1fbb3"},
+    {file = "certifi-2019.11.28.tar.gz", hash = "sha256:25b64c7da4cd7479594d035c08c2d809eb4aab3a26e5a990ea98cc450c320f1f"},
+]
+chardet = [
+    {file = "chardet-3.0.4-py2.py3-none-any.whl", hash = "sha256:fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"},
+    {file = "chardet-3.0.4.tar.gz", hash = "sha256:84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae"},
+]
+falcon = [
+    {file = "falcon-2.0.0-cp27-cp27m-manylinux1_i686.whl", hash = "sha256:733033ec80c896e30a43ab3e776856096836787197a44eb21022320a61311983"},
+    {file = "falcon-2.0.0-cp27-cp27m-manylinux1_x86_64.whl", hash = "sha256:f93351459f110b4c1ee28556aef9a791832df6f910bea7b3f616109d534df06b"},
+    {file = "falcon-2.0.0-cp27-cp27mu-manylinux1_i686.whl", hash = "sha256:e9efa0791b5d9f9dd9689015ea6bce0a27fcd5ecbcd30e6d940bffa4f7f03389"},
+    {file = "falcon-2.0.0-cp27-cp27mu-manylinux1_x86_64.whl", hash = "sha256:59d1e8c993b9a37ea06df9d72cf907a46cc8063b30717cdac2f34d1658b6f936"},
+    {file = "falcon-2.0.0-cp34-cp34m-manylinux1_i686.whl", hash = "sha256:a5ebb22a04c9cc65081938ee7651b4e3b4d2a28522ea8ec04c7bdd2b3e9e8cd8"},
+    {file = "falcon-2.0.0-cp34-cp34m-manylinux1_x86_64.whl", hash = "sha256:95bf6ce986c1119aef12c9b348f4dee9c6dcc58391bdd0bc2b0bf353c2b15986"},
+    {file = "falcon-2.0.0-cp35-cp35m-manylinux1_i686.whl", hash = "sha256:aa184895d1ad4573fbfaaf803563d02f019ebdf4790e41cc568a330607eae439"},
+    {file = "falcon-2.0.0-cp35-cp35m-manylinux1_x86_64.whl", hash = "sha256:74cf1d18207381c665b9e6292d65100ce146d958707793174b03869dc6e614f4"},
+    {file = "falcon-2.0.0-cp36-cp36m-manylinux1_i686.whl", hash = "sha256:24adcd2b29a8ffa9d552dc79638cd21736a3fb04eda7d102c6cebafdaadb88ad"},
+    {file = "falcon-2.0.0-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:18157af2a4fc3feedf2b5dcc6196f448639acf01c68bc33d4d5a04c3ef87f494"},
+    {file = "falcon-2.0.0-cp37-cp37m-manylinux1_i686.whl", hash = "sha256:e3782b7b92fefd46a6ad1fd8fe63fe6c6f1b7740a95ca56957f48d1aee34b357"},
+    {file = "falcon-2.0.0-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:9712975adcf8c6e12876239085ad757b8fdeba223d46d23daef82b47658f83a9"},
+    {file = "falcon-2.0.0-py2.py3-none-any.whl", hash = "sha256:54f2cb4b687035b2a03206dbfc538055cc48b59a953187b0458aa1b574d47b53"},
+    {file = "falcon-2.0.0.tar.gz", hash = "sha256:eea593cf466b9c126ce667f6d30503624ef24459f118c75594a69353b6c3d5fc"},
+]
+hug = [
+    {file = "hug-2.6.1-py2.py3-none-any.whl", hash = "sha256:31c8fc284f81377278629a4b94cbb619ae9ce829cdc2da9564ccc66a121046b4"},
+    {file = "hug-2.6.1.tar.gz", hash = "sha256:b0edace2acb618873779c9ce6ecf9165db54fef95c22262f5700fcdd9febaec9"},
+]
+idna = [
+    {file = "idna-2.9-py2.py3-none-any.whl", hash = "sha256:a068a21ceac8a4d63dbfd964670474107f541babbd2250d61922f029858365fa"},
+    {file = "idna-2.9.tar.gz", hash = "sha256:7588d1c14ae4c77d74036e8c22ff447b26d0fde8f007354fd48a7814db15b7cb"},
+]
+requests = [
+    {file = "requests-2.23.0-py2.py3-none-any.whl", hash = "sha256:43999036bfa82904b6af1d99e4882b560e5e2c68e5c4b0aa03b655f3d7d73fee"},
+    {file = "requests-2.23.0.tar.gz", hash = "sha256:b3f43d496c6daba4493e7c431722aeb7dbc6288f52a6e04e7b6023b0247817e6"},
+]
+urllib3 = [
+    {file = "urllib3-1.25.8-py2.py3-none-any.whl", hash = "sha256:2f3db8b19923a873b3e5256dc9c2dedfa883e33d87c690d9c7913e1f40673cdc"},
+    {file = "urllib3-1.25.8.tar.gz", hash = "sha256:87716c2d2a7121198ebcb7ce7cccf6ce5e9ba539041cfbaeecfb641dc0bf6acc"},
+]
+uwsgi = [
+    {file = "uwsgi-2.0.18.tar.gz", hash = "sha256:4972ac538800fb2d421027f49b4a1869b66048839507ccf0aa2fda792d99f583"},
+]

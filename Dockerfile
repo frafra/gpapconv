@@ -1,13 +1,17 @@
 FROM fedora
 LABEL maintainer="fraph24@gmail.com"
 
-RUN dnf -y update && dnf clean all
-RUN dnf -y install uwsgi-plugin-python3 sqlite && dnf clean all
+WORKDIR /src
+ADD poetry.lock pyproject.toml .
 
-ADD . /src
+RUN dnf -y install poetry sqlite && \
+    dnf -y install gcc python3-devel && \
+    poetry install --no-root --no-dev && \
+    dnf -y remove gcc python3-devel && \
+    dnf clean all
 
-RUN echo -e '#!/bin/sh\nexport PYTHONPATH="/usr/local/lib/python3.6/site-packages"\nuwsgi --ini /src/uwsgi.ini --chdir /src' > /src/run.sh; chmod +x /src/run.sh; pip3 install --requirement /src/requirements.txt
+ADD . .
 
 EXPOSE 8000
 
-CMD ["/bin/sh", "/src/run.sh"]
+CMD ["/usr/bin/poetry", "run", "uwsgi", "--ini", "uwsgi.ini"]

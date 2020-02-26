@@ -9,6 +9,7 @@ Demo: https://gpapconv.frafra.eu/
 - [Python 3](https://www.python.org/)
   - [hug](http://www.hug.rest/)
   - [uWSGI](https://uwsgi-docs.readthedocs.io/)
+  - [Poetry](poetry.eustace.io/)
 - [sqlite](https://sqlite.org/)
 
 ## Setup
@@ -16,7 +17,8 @@ Demo: https://gpapconv.frafra.eu/
 ### uwsgi
 
 ```
-$ uwsgi --ini uwsgi.ini
+$ poetry install --no-root --no-dev
+$ poetry run uwsgi --ini uwsgi.ini
 ```
 
 ### Docker image

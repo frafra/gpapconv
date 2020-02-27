@@ -8,6 +8,14 @@ version = "0.4.0"
 
 [[package]]
 category = "main"
+description = "Easy SQL in Python"
+name = "anosql"
+optional = false
+python-versions = "*"
+version = "1.0.2"
+
+[[package]]
+category = "main"
 description = "Composable command line interface toolkit"
 name = "click"
 optional = false
@@ -128,13 +136,16 @@ python-versions = ">=3.6.1"
 version = "8.1"
 
 [metadata]
-content-hash = "5bc842f8d0229e33483f3feab35f12fe4bc7dcb263682100b84d1303ac515c0f"
+content-hash = "1548ddb17c675ec83b8f18c1b59c25c13caafa0be1ab521eb6a0a9cdb4c2ef4c"
 python-versions = "^3.7"
 
 [metadata.files]
 aiofiles = [
     {file = "aiofiles-0.4.0-py3-none-any.whl", hash = "sha256:1e644c2573f953664368de28d2aa4c89dfd64550429d0c27c4680ccd3aa4985d"},
     {file = "aiofiles-0.4.0.tar.gz", hash = "sha256:021ea0ba314a86027c166ecc4b4c07f2d40fc0f4b3a950d1868a0f2571c2bbee"},
+]
+anosql = [
+    {file = "anosql-1.0.2.tar.gz", hash = "sha256:ad009427db735cd7d86e76b596a839a736a5d8531897976ec2606cbbca551ec8"},
 ]
 click = [
     {file = "Click-7.0-py2.py3-none-any.whl", hash = "sha256:2335065e6395b9e67ca716de5f7526736bfa6ceead690adf616d925bdc622b13"},

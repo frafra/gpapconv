@@ -18,7 +18,7 @@ Demo: https://gpapconv.frafra.eu/
 
 ```
 $ poetry install --no-root --no-dev
-$ poetry run uvicorn gpapconv:app
+$ poetry run uvicorn api.index:app
 ```
 
 ### Docker image

@@ -11,4 +11,4 @@ ADD . .
 
 EXPOSE 8000
 
-CMD ["/usr/local/bin/poetry", "run", "uvicorn", "gpapconv:app"]
+CMD ["/usr/local/bin/poetry", "run", "uvicorn", "api.index:app"]

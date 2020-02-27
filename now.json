@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/gpap2(.*)", "destination": "/api/index" },
+    { "source": "/", "destination": "/web" }
+  ]
+}

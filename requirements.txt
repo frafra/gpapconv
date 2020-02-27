@@ -1,0 +1,13 @@
+aiofiles==0.4.0
+anosql==1.0.2
+click==7.0
+fastapi==0.49.0
+h11==0.9.0
+httptools==0.1.1; sys_platform != "win32" and sys_platform != "cygwin" and platform_python_implementation != "PyPy"
+pydantic==1.4
+python-multipart==0.0.5
+six==1.14.0
+starlette==0.12.9
+uvicorn==0.11.3
+uvloop==0.14.0; sys_platform != "win32" and sys_platform != "cygwin" and platform_python_implementation != "PyPy"
+websockets==8.1

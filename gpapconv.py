@@ -1,36 +1,44 @@
 #!/usr/bin/env python3
 
-import hug
 
-import output_format
+from fastapi import FastAPI, File, UploadFile
+from starlette.responses import FileResponse, Response
 
-import functools
+import anosql
+import datetime
+import json
+import shutil
 import sqlite3
 import tempfile
 
-@functools.lru_cache(maxsize=8)
-def read_file(path):
-    with open(path) as fp:
-        return fp.read()
+queries = anosql.from_path('queries.sql', 'sqlite3')
 
-def run_query_on_db(db_path, query_path):
+def run_query_on_db(db_path, query_name):
     with sqlite3.connect(db_path) as con:
-        cur = con.cursor()
-        query = read_file(query_path)
-        result = cur.execute(query).fetchone()[0]
-    return result
+        return getattr(queries, query_name)(con)[0][0]
 
-def run_query_on_form(body, field_name, query_path):
-    content = body[field_name]
+def run_query_on_form(file, query_name):
     with tempfile.NamedTemporaryFile() as tf:
-        tf.write(content)
-        result = run_query_on_db(tf.name, query_path)
-    return result
+        shutil.copyfileobj(file.file, tf)
+        return run_query_on_db(tf.name, query_name)
 
-@hug.post('/gpap2osm', output=output_format.xml)
-def gpap2osm(body):
-    return run_query_on_form(body, 'file', 'queries/gpap2osm.sql')
+def generate_filename(extension):
+    return 'geopap-{}.{}'.format(datetime.date.today(), extension)
 
-@hug.post('/gpap2geojson', output=output_format.geojson)
-def gpap2osm(body):
-    return run_query_on_form(body, 'file', 'queries/gpap2geojson.sql')
+app = FastAPI()
+
+@app.get("/")
+async def index():
+    return FileResponse('web/index.html')
+
+@app.post("/gpap2osm")
+async def gpap2osm(response: Response, file: UploadFile = File(...)):
+    response.headers['Content-Disposition'] = generate_filename('xml')
+    result = run_query_on_form(file, 'gpap2osm')
+    return Response(result, media_type="application/xml")
+
+@app.post("/gpap2geojson")
+async def gpap2geojson(response: Response, file: UploadFile = File(...)):
+    response.headers['Content-Disposition'] = generate_filename('geojson')
+    result = run_query_on_form(file, 'gpap2geojson')
+    return json.loads(result)

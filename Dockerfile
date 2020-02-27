@@ -1,17 +1,14 @@
-FROM fedora
+FROM python:3.7-slim
 LABEL maintainer="fraph24@gmail.com"
 
 WORKDIR /src
 ADD poetry.lock pyproject.toml .
 
-RUN dnf -y install poetry sqlite && \
-    dnf -y install gcc python3-devel && \
-    poetry install --no-root --no-dev && \
-    dnf -y remove gcc python3-devel && \
-    dnf clean all
+RUN pip install poetry && \
+    poetry install --no-root --no-dev
 
 ADD . .
 
 EXPOSE 8000
 
-CMD ["/usr/bin/poetry", "run", "uwsgi", "--ini", "uwsgi.ini"]
+CMD ["/usr/local/bin/poetry", "run", "uvicorn", "gpapconv:app"]

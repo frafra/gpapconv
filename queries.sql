@@ -55,7 +55,7 @@ select json_object(
         where json_extract(value, '$.value') != ''
        )
 select '<?xml version="1.0" encoding="UTF-8"?>' ||
-       '<osm version="0.6" generator="gpap-notes2osm 0.0.3">' ||
+       '<osm version="0.6" generator="gpap-conv">' ||
        group_concat(nodes, '') ||
        '</osm>'
   from body;

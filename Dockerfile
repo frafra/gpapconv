@@ -2,7 +2,7 @@ FROM python:3.7-slim
 LABEL maintainer="fraph24@gmail.com"
 
 WORKDIR /src
-ADD poetry.lock pyproject.toml .
+ADD poetry.lock pyproject.toml ./
 
 RUN pip install poetry && \
     poetry install --no-root --no-dev

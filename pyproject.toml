@@ -8,7 +8,7 @@ license = "AGPL-3.0-or-later"
 [tool.poetry.dependencies]
 python = "^3.7"
 aiofiles = "^0.4.0"
-uvicorn = "^0.11.7"
+uvicorn = "^0.13.4"
 fastapi = "^0.49.0"
 python-multipart = "^0.0.5"
 anosql = "^1.0.2"

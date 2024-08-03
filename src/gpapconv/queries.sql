@@ -1,4 +1,4 @@
--- name: gpap2geojson
+-- name: gpap2geojson^
 -- This query allows to convert notes from Geopaparazzi into a GeoJSON
   with osm as (
        select _id,
@@ -26,7 +26,7 @@ select json_object(
   join osm
     on notes._id = osm._id;
 
--- name: gpap2osm
+-- name: gpap2osm^
 -- This query allows to convert notes from Geopaparazzi into a OSM XML
   with body as (
        select '<node action="modify" ' ||

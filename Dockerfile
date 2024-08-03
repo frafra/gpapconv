@@ -1,14 +1,6 @@
-FROM python:3.7-slim
-LABEL maintainer="fraph24@gmail.com"
-
-WORKDIR /src
-ADD poetry.lock pyproject.toml ./
-
-RUN pip install poetry && \
-    poetry install --no-root --no-dev
-
-ADD . .
-
+FROM python:3.11-alpine AS base
+RUN --mount=type=bind,target=/pkg,rw \
+    --mount=type=cache,target=/root/.cache/pip \
+    pip install /pkg
 EXPOSE 8000
-
-CMD ["/usr/local/bin/poetry", "run", "uvicorn", "--host", "0.0.0.0", "gpapconv:app"]
+CMD ["uvicorn", "--host", "0.0.0.0", "gpapconv:app"]

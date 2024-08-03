@@ -4,28 +4,27 @@ Geopaparazzi to OSM XML and GeoJSON converter
 
 Demo: https://gpapconv.frafra.eu/
 
-## Dependencies
+## Technologies
 
 - [Python 3](https://www.python.org/)
   - [FastAPI](https://fastapi.tiangolo.com/)
   - [Uvicorn](https://www.uvicorn.org/)
-  - [Poetry](poetry.eustace.io/)
 - [sqlite](https://sqlite.org/)
 
 ## Setup
 
-### uwsgi
+### Classic
 
-```
-$ poetry install --no-root --no-dev
-$ poetry run uvicorn gpapconv:app
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -e .
 ```
 
-### Docker image
+### Docker
 
-```
-$ docker build --tag=gpapconv .
-$ docker run --publish 8000:8000 --detach gpapconv
+```bash
+docker compose up --build
 ```
 
 ## How to use
@@ -38,12 +37,12 @@ Open http://localhost:8000.
 
 From gpap to OSM XML:
 
-```
-$ curl -X POST -F "file=@geopaparazzi.gpap" http://localhost:8000/gpap2osm
+```bash
+curl -X POST -F "file=@geopaparazzi.gpap" http://localhost:8000/gpap2osm
 ```
 
 From gpap to OSM GeoJSON:
 
-```
-$ curl -X POST -F "file=@geopaparazzi.gpap" http://localhost:8000/gpap2geojson
+```bash
+curl -X POST -F "file=@geopaparazzi.gpap" http://localhost:8000/gpap2geojson
 ```

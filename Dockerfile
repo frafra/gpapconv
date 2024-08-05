@@ -1,4 +1,4 @@
-FROM python:3.11-alpine AS base
+FROM python:3.12-alpine AS base
 RUN --mount=type=bind,target=/pkg,rw \
     --mount=type=cache,target=/root/.cache/pip \
     pip install /pkg
